@@ -1,0 +1,17 @@
+{
+    "name": "sufi/assignment3",
+    "autoload": {
+        "psr-4": {
+            "Sufi\\Assignment3\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Gabor Siffer",
+            "email": "gabor.siffer@gmail.com"
+        }
+    ],
+    "require": {
+        "predis/predis": "^2.2"
+    }
+}
