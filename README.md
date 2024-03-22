@@ -1,6 +1,6 @@
 # Project: Assignment 3, COMP 3015: Database Caching
 
-<h2>Project Overview</h2>
+## Project Overview
 
 This repository hosts a demonstration project aimed at showcasing the benefits of database caching using Redis.
 
@@ -36,8 +36,8 @@ php -S localhost:7777
 
 ## App Functionality Overview
 
-**Initial Database Query:** Upon the first request, the app retrieves and displays all first and last names from the database. The time taken to fetch this data is shown at the bottom of the page.
-**Subsequent Requests:** For subsequent requests, data is fetched from cache memory. The time taken for this retrieval is also displayed at the bottom of the page, allowing for comparison of efficiency between database and cache retrieval methods.
+- **Initial Database Query:** Upon the first request, the app retrieves and displays all first and last names from the database. The time taken to fetch this data is shown at the bottom of the page.
+- **Subsequent Requests:** For subsequent requests, data is fetched from cache memory. The time taken for this retrieval is also displayed at the bottom of the page, allowing for comparison of efficiency between database and cache retrieval methods.
 
 ## Screenshots
 
