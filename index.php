@@ -2,8 +2,10 @@
 
 require './vendor/autoload.php';
 
+// Create an intance of redis client
 $redis = new Predis\Client();
 
+// Check if the key is in the memory
 $cachedEntry = $redis->get('actor');
 
 $t0 = 0;
@@ -12,9 +14,12 @@ $t1 = 0;
 if ($cachedEntry) {
   // display the result from the cache
   echo "<h3>From Redis Cache</h3>";
+
+  // Returns the current Unix timestamp with microseconds
   $t0 = microtime((true)) * 1000;
   echo $cachedEntry;
   $t1 = microtime((true)) * 1000;
+
   echo '<h4>Time taken: ' . round($t1 - $t0, 4) . '</h4>';
   exit();
 } else {
@@ -32,7 +37,8 @@ if ($cachedEntry) {
 
   $temp = '';
   $num = 0;
-  while ($row = $result->fetch_assoc()) {
+  // Convert the result set to an associative array and loop through it
+  while ($row = $result->fetch_assoc()) { //Fetches the next row from the result set as an associative array
     $num += 1;
     echo $num . '. ';
     echo $row['first_name'] . ' ';
@@ -43,9 +49,11 @@ if ($cachedEntry) {
   $t1 = microtime((true)) * 1000;
   echo '<h4>Time taken: ' . round($t1 - $t0, 4) . '</h4>';
 
+  // Store the data in redis/memory
   $redis->set('actor', $temp);
 
-  $redis->expire('actor', 20);
+  // Set the timer to delete the data from the cache
+  $redis->expire('actor', 10);
 
   $conn->close();
   exit();
