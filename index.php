@@ -42,8 +42,11 @@ if ($cachedEntry) {
 
   $t1 = microtime((true)) * 1000;
   echo '<h4>Time taken: ' . round($t1 - $t0, 4) . '</h4>';
+
   $redis->set('actor', $temp);
+
   $redis->expire('actor', 20);
+
   $conn->close();
   exit();
 }
