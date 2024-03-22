@@ -1,6 +1,6 @@
 # Project: Assignment 3, COMP 3015: Database Caching
 
-## Project Overview
+<h2>Project Overview</h2>
 
 This repository hosts a demonstration project aimed at showcasing the benefits of database caching using Redis.
 
